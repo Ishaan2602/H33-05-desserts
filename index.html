@@ -23,17 +23,30 @@
             <p><input type="submit" value="Chocolate" id="chocolate"></p>
             <p><input type="submit" value="Strawberry" id="strawberry"></p>
         </div>
-
+        <div class="category" id="category2">
+            <p>Waffles</p>
+            <p><input type="submit" value="Pure" id="pure"></p>
+            <p><input type="submit" value="Sugar" id="sugar"></p>
+            <p><input type="submit" value="Syrup" id="syrup"></p>
+        </div>
 
     </div>
 
-
+    <iframe src="category_01/vanilla/vanilla.txt" class="info" width="80%" height="400px"></iframe>
 
 </div>
 
     <script>
+        function setUpButton(id, category="1") { //if no category is specified, then default is 1
+            $("#" + id).click(function(){
+                $(".info").attr("src", `category_0${category}/${id}/${id}.txt`)
+            })
+        }
 
-
+    setUpButton("vanilla")
+    setUpButton("chocolate")
+    setUpButton("strawberry")
+    setUpButton("pure", "2")
         
     </script>
 </body>
